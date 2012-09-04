@@ -21,10 +21,9 @@ requires:
   Class::Load: 0
   DBI: 0
   Data::Dumper: 0
-  Hypatia::Config: 0
   Moose: 0
   Moose::Util::TypeConstraints: 0
   namespace::autoclean: 0
   strict: 0
   warnings: 0
-version: 0.01
+version: 0.01.1

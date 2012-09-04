@@ -1,9 +1,8 @@
 package Hypatia;
 {
-  $Hypatia::VERSION = '0.01';
+  $Hypatia::VERSION = '0.01.1';
 }
 use Moose;
-use Hypatia::Config;
 use Hypatia::Columns;
 use Class::Load qw(load_class);
 use Data::Dumper;
@@ -117,7 +116,7 @@ Hypatia - A Data Visualization API
 
 =head1 VERSION
 
-version 0.01
+version 0.01.1
 
 =head1 SYNOPSIS
 
