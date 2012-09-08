@@ -6,6 +6,7 @@ Makefile.PL
 README
 README.md
 dist.ini
+dist.ini~
 lib/Hypatia.pm
 lib/Hypatia/Base.pm
 lib/Hypatia/Columns.pm
