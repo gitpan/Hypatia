@@ -9,7 +9,7 @@ BEGIN
     if($@)
     {
 	require Test::More;
-	Test::More::Plan(skip_all=>"DBD::SQLite is required to run these tests.")
+	Test::More::plan(skip_all=>"DBD::SQLite is required to run these tests.")
     }
 }
 
