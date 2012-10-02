@@ -1,5 +1,12 @@
 Revision history for Hypatia
 
+0.026     2012-10-01 19:07:34 America/Chicago
+
+- Moved some methods from Hypatia::Chart::Clicker to Hypatia::Base in order to facilitate polymorphism with Hypatia::GraphViz2
+
+- After reading through the DBD::SQLite docs, I found out that a database filename of the empty string causes a temp file to be used.
+I added this functionality to Hypatia::DBI::Test::SQLite.
+
 0.025     2012-09-26 04:09:46 America/Chicago
 
 - Added an abstract column guessing method (meant to be called internally) and a couple of unit tests.
