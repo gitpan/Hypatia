@@ -1,6 +1,6 @@
 package Hypatia::DBI::Test::SQLite;
 {
-  $Hypatia::DBI::Test::SQLite::VERSION = '0.028';
+  $Hypatia::DBI::Test::SQLite::VERSION = '0.029';
 }
 use Moose;
 use DBI;
@@ -94,22 +94,15 @@ sub load_table
     {
         if($_->{table} eq $self->table)
         {
-			use Data::Dumper;
-			print "Here's the table data: " . Dumper($_) . "\n\n";
             $dbh->do($_->{create}) or die $dbh->errstr;
-            
-			my $sth = $dbh->prepare("insert into " . $self->table . " values (?,?)")
+
+			my $question_marks = join(",",map{"?"}@{$_->{insert}->[0]});
+			my $sth = $dbh->prepare("insert into " . $self->table . " values ($question_marks)")
 				or die $dbh->errstr;
 
             foreach my $value_array (@{$_->{insert}})
             {
 				$sth->execute(@$value_array) or die $dbh->errstr;
-				my @a = @$value_array;
-				foreach(@a)
-				{
-					$_ = "NULL" unless defined $_;
-				}
-				print "inserting: " . join(",",@a) . "\n";
             }
             $found=1;
             last;
@@ -136,7 +129,7 @@ Hypatia::DBI::Test::SQLite
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 AUTHOR
 
